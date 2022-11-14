@@ -1,15 +1,27 @@
-
+:root{
+    --if3-color : #df0059;
+    --if3-text-color: white;
+}
 
 nav ul {
     display: flex;
     list-style-type: none;
+    justify-content: center;
     gap: 10px ;
 }
 
 nav {
-    background-color: #df0059;
+    background-color: var(--if3-color);
 }
 
 nav a {
-    color: white;
+    color: var(--if3-text-color);
+}
+
+
+footer {
+    background-color: var(--if3-color);
+    color: var(--if3-text-color);
+    display: flex;
+    justify-content: space-between;
 }
