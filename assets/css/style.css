@@ -1,0 +1,15 @@
+
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 10px ;
+}
+
+nav {
+    background-color: #df0059;
+}
+
+nav a {
+    color: white;
+}
