@@ -34,9 +34,13 @@ class FormationModel {
 
         foreach ($result as $formation) {
             
-            $aFormation = new Formation();
-            $aFormation->id = $formation["id"]; 
-            $aFormation->nom = $formation["nom"];
+            $aFormation = new Formation($formation["id"],$formation["nom"] );
+
+            //Autre façon de faire
+            // $aFormation->id = $formation["id"]; 
+            // $aFormation->nom = $formation["nom"];
+            
+           
             $allTrainings [] =  $aFormation;
 
         }
