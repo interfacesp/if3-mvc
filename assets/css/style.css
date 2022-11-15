@@ -25,3 +25,8 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
+.error404{
+    display: flex;
+    justify-content: center;
+}
