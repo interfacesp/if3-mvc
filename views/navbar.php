@@ -3,5 +3,7 @@
     <ul>
         <li><a href="?view=formations">Formations</a></li>
         <li><a href="?view=contact">Contact</a></li>
+        <li><a href="?view=inscription">Inscription Stagiaire</a></li>
+
     </ul>
 </nav>

@@ -13,6 +13,14 @@ if (isset($_GET["view"])){
             $trainings = $formationModel->getAllTrainings();
             require("views/viewFormations.php");
             break; 
+
+        case 'contact': 
+            require("views/viewContact.php");
+            break; 
+
+        case 'inscription':
+            require("views/viewInscription.php");
+            break;
         
         default:
             # code...
