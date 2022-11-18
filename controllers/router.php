@@ -23,7 +23,7 @@ if (isset($_GET["view"])){
             break;
         
         default:
-            # code...
+            //Si aucune correspondance, indique que page non trouvée 
             require("views/404.php");
             break;
     }

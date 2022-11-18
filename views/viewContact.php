@@ -17,7 +17,7 @@
 </form>
 
 <?php
-
+    // Si réception de la valeur success, dans l'adresse alors message envoyé
     if(isset($_GET["success"])){
         $msgEnvoiOk = $_GET["success"];
         if($msgEnvoiOk){
