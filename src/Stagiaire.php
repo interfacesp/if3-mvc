@@ -7,15 +7,17 @@ class Stagiaire {
     //format date: yyyy-mm-dd
     //exemple: 2022-11-17 pour le 17 novembre 2022
     public string $date_naissance;
+
+    public string $email; 
     
 
-    function __construct(string $numNational, string $nom, string $prenom, $dateNaissance)
+    function __construct(string $numNational, string $nom, string $prenom, string $dateNaissance, string $email)
     {
         $this->numero_national = $numNational;
         $this->nom_stag = $nom;
         $this->prenom_stag = $prenom;
-        $this->date_naissance = $numNational;
-        
+        $this->date_naissance = $dateNaissance;
+        $this->email = $email;    
     }
     
 

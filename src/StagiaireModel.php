@@ -22,19 +22,33 @@ class StagiaireModel {
 
     function getAllStagiaires() : Array {
         
+        //On écrit la requête SQL dans une variable - sous forme de texte
+        // Attention: à ce stade, MySQL n'est pas encore contacté. 
         $query= "
-                SELECT * FROM stagiaires;
-
+                SELECT * FROM stagiaire;
          ";
-        $request= $this->myPDO->prepare($query);
-        $request->execute();
-        $result = $request->fetchAll();
+        
+        //********** Début Requête */
+        //C'est vraiment ici que la communication DB commence
+        $request= $this->myPDO->prepare($query); //préparation requête
+        $request->execute(); // lancement exécution 
+        $result = $request->fetchAll(); // réception résultats
+        //******* FIN  */
+        
+        $allStudents= []; // tableau qui contiendra la liste des stagiaires sous forme d'objets
 
-        $allStudents= [];
 
-        foreach ($result as $stagiaire_db_row) {
-            
-
+        foreach ($result as $uneligneTableStag) {
+            //On emballe le résultat d'une ligne de table stagiaire, dans un objet Stagiaire
+            $objStagiaire = new Stagiaire(
+                $uneligneTableStag["numero_national"],
+                $uneligneTableStag["nom"],
+                $uneligneTableStag["prenom"],
+                $uneligneTableStag["date_naissance"],
+                $uneligneTableStag["email"]
+            );
+            //ajoute l'instance dans le tableau 
+            $allStudents[] = $objStagiaire; 
         }
 
         return $allStudents;

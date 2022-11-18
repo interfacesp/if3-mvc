@@ -1,6 +1,7 @@
 <?php
 
-include_once "./src/FormationModel.php";
+include_once "src/FormationModel.php";
+include_once "src/StagiaireModel.php";
 
 if (isset($_GET["view"])){
     $viewType = $_GET["view"]; 
@@ -16,6 +17,13 @@ if (isset($_GET["view"])){
 
         case 'contact': 
             require("views/viewContact.php");
+            break; 
+
+            
+        case 'stagiaires':
+            $stagModel = new StagiaireModel();
+            $students = $stagModel->getAllStagiaires(); 
+            require("views/viewStagiaires.php");
             break; 
 
         case 'inscription':

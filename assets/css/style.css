@@ -6,7 +6,7 @@
 nav ul {
     display: flex;
     list-style-type: none;
-    justify-content: center;
+    justify-content: right;
     gap: 10px ;
 }
 
