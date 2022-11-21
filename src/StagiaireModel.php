@@ -57,6 +57,33 @@ class StagiaireModel {
     }
 
 
+    function inscrire(Stagiaire $nouvStagiaire) : void{
+
+        $query= "
+                INSERT INTO stagiaire(numero_national,nom,prenom,date_naissance,email) VALUES(?,?,?,?,?); 
+        "; 
+        
+        try {
+
+                $request= $this->myPDO->prepare($query);
+                $request->execute([
+                    $nouvStagiaire->numero_national,
+                    $nouvStagiaire->nom_stag,
+                    $nouvStagiaire->prenom_stag,
+                    $nouvStagiaire->date_naissance,
+                    $nouvStagiaire->email
+            ]);
+
+        }catch (PDOException $exception){
+            die("erreur dans l'insertion : $exception->getMessage()");
+        }
+
+       
+
+
+    }
+
+
    
 
 
